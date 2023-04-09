@@ -9,6 +9,9 @@ function App(){
   const onChange = (e) =>{
     setTodo(e.target.value)
   }
+  const onRemove = (e) => {
+    console.log(toDos);
+  }
 
   const onSubmit = (e) =>{
     e.preventDefault();
@@ -27,7 +30,7 @@ function App(){
             <button>등록하기</button>
         </form>
         <ul>
-          {toDos.map((item,index)=><li key={index}>{item}</li>)}
+          {toDos.map((item,index)=><li key={index}>{item}<input type="button" onClick={onRemove} value="X"></input></li>)}
         </ul>
     </div>
     )
